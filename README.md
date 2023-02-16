@@ -1,4 +1,4 @@
-# map_test
+# Thunderforest Map
 
 A new Flutter project.
 
