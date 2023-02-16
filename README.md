@@ -1,6 +1,6 @@
 # Thunderforest Map
 
-A new Flutter project.
+Flutter Map using Thunderforest API.
 
 ## Getting Started
 
