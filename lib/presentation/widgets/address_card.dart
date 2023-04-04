@@ -10,7 +10,7 @@ class AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
-        final mapCubit = HomeCubit.get(context);
+        final mapCubit = BlocProvider.of<HomeCubit>(context);
         final size = MediaQuery.of(context).size;
         return Container(
           width: double.maxFinite,

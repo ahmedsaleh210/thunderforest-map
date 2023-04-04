@@ -11,7 +11,6 @@ part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> with MapServices {
   HomeCubit() : super(HomeInitial());
-  static HomeCubit get(context) => BlocProvider.of(context);
 
   final mapController = MapController();
   late Position currentLocation;
