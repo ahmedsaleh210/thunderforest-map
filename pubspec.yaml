@@ -3,7 +3,7 @@ description: Flutter Map using Thunderforest API.
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
   auto_size_text: ^3.0.0
@@ -14,6 +14,7 @@ dependencies:
   flutter_map: ^3.1.0
   geocoding_resolver: ^0.0.3+2
   geolocator: ^9.0.2
+  georouter: ^0.0.1
   latlong2: ^0.8.1
 
 dev_dependencies:

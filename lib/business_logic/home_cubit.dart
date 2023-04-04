@@ -15,6 +15,7 @@ class HomeCubit extends Cubit<HomeState> with MapServices {
 
   final mapController = MapController();
   late Position currentLocation;
+  List<LatLng> polylinePoints = [];
   Address? currentAddress;
 
   List<Marker> markers = [];
@@ -28,6 +29,7 @@ class HomeCubit extends Cubit<HomeState> with MapServices {
       currentAddress = await getAddressFromLatLng(
           latitude: currentLocation.latitude,
           longitude: currentLocation.longitude);
+      polylinePoints = await getPolyLine();
       emit(HomeLoaded());
     } catch (e) {
       log('$e');

@@ -44,6 +44,19 @@ class MapProvider extends StatelessWidget {
                   ),
                   MarkerLayer(
                     markers: mapCubit.markers,
+                  ),
+                  if(state is HomeLoaded)
+                  PolylineLayer(
+                    polylines: [
+                      Polyline(
+                        points: mapCubit.polylinePoints,
+                        strokeCap: StrokeCap.round,
+                        strokeWidth: 4,
+                        borderStrokeWidth: 1,
+                        color: const Color.fromARGB(255, 196, 121, 209),
+                        borderColor: Colors.black
+                        )
+                    ],
                   )
                 ],
               ),

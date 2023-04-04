@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geocoding_resolver/geocoding_resolver.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:georouter/georouter.dart';
+import 'package:latlong2/latlong.dart';
 
 class MapServices {
   List<Marker> getMarker(location) {
@@ -42,5 +44,18 @@ class MapServices {
     }
     return await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
+  }
+
+  final geoRouter = GeoRouter(mode: TravelMode.driving);
+
+  Future<List<LatLng>> getPolyLine() async
+  {
+    final List<PolylinePoint> coordinates = [
+    PolylinePoint(latitude: 31.017187, longitude: 31.392073),
+    PolylinePoint(latitude: 31.173332, longitude: 31.519879)
+  ];
+  //[log] tapped: LatLng(latitude:31.173332, longitude:31.519879)
+    final points = await geoRouter.getDirectionsBetweenPoints(coordinates);
+    return points.map((point) => LatLng(point.latitude,point.longitude)).toList();
   }
 }
